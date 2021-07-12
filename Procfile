@@ -1,0 +1,1 @@
+web: gunicorn portfolio.wsgy.py --log-file -
