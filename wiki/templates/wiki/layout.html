@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    {% block head %}
+    {% endblock %}
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title"><strong>Welcome to Wiki</strong> </h1>
+            <p class="description">This webpage is like Wikipedia, a place where all of us can add or modify content.
+            </p>
+        </header>
+        <div class="logoImg">
+            <img class="logo" src="{% static 'img/logo.jpg' %}" alt="wikipedia logo">
+        </div>
+        <main>
+            {% block main %}
+            {% endblock %}
+        </main>
+        <aside>
+            <input class="search" type="search" placeholder="Search Wiki Pages">
+            <div class="sideBarLinks">
+                <a href="{% url 'wiki:home_page' %}">Home Page</a>
+                <a href="{% url 'wiki:new_page' %}">Create New Page</a>
+                <a href="{% url 'wiki:random_page' %}">Random Page</a>
+            </div>
+        </aside>
+        <footer>
+
+        </footer>
+    </div>
+</body>
+
+</html>

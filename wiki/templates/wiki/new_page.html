@@ -1,0 +1,12 @@
+{% extends 'wiki/layout.html' %}
+{% block main %}
+<h2 class="newPageTitle">Create a new page</h2>
+<form method="POST" action="">
+    {% csrf_token %}
+    <label class="newPageLabel" for="title">Title</label>
+    <input class="newPageInput" type="text" name='title'>
+    <label class="newPageLabel" for="description">Description</label>
+    <textarea class="newPageInput" name="description" rows="10"></textarea>
+    <button class="newPageBtn" type="submit">Create page</button>
+</form>
+{% endblock %}
