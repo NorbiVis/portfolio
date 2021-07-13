@@ -26,7 +26,7 @@ SECRET_KEY = 's%@f_!ukaqhur&$@ynwij(ugwlfj3sjf7@wm-pa*!w5r#5x^x#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://viszakaly-norbert.herokuapp.com", '127.0.0.1', 'viszakaly-nortbert.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'wiki-app-vn.herokuapp.com']
 
 
 # Application definition
