@@ -19,14 +19,19 @@
             </p>
         </header>
         <div class="logoImg">
-            <img class="logo" src="{% static 'img/logo.jpg' %}" alt="wikipedia logo">
+            <a href="{% url 'wiki:home_page' %}"><img class="logo" src="{% static 'img/logo.jpg' %}"
+                    alt="wikipedia logo"></a>
         </div>
         <main>
             {% block main %}
             {% endblock %}
         </main>
         <aside>
-            <input class="search" type="search" placeholder="Search Wiki Pages">
+            <form method="GET" action="{% url 'wiki:search' %}">
+                {% csrf_token %}
+                <input type="search" placeholder="Search Wiki Pages" name="search" class="search">
+                <button class="searchBtn" type="submit">PUSH</button>
+            </form>
             <div class="sideBarLinks">
                 <a href="{% url 'wiki:home_page' %}">Home Page</a>
                 <a href="{% url 'wiki:new_page' %}">Create New Page</a>
@@ -34,7 +39,9 @@
             </div>
         </aside>
         <footer>
-
+            <h3>You can find me</h3>
+            <span>| | Email: norbi_vis@yahoo.com |</span>
+            <span>| GitHub: https://github.com/NorbiVis | |</span>
         </footer>
     </div>
 </body>

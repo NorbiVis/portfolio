@@ -1,0 +1,9 @@
+{% extends 'wiki/layout.html' %}
+{% block main %}
+<form method="POST" action="">
+    {% csrf_token %}
+    {{ form.title }}
+    {{ form.description }}
+    <button id="editBtn" class="newPageBtn" type="submit">Edit</button>
+</form>
+{% endblock %}

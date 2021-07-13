@@ -4,9 +4,9 @@
 <form method="POST" action="">
     {% csrf_token %}
     <label class="newPageLabel" for="title">Title</label>
-    <input class="newPageInput" type="text" name='title'>
+    <input id="title" class="newPageInput" type="text" name='title'>
     <label class="newPageLabel" for="description">Description</label>
-    <textarea class="newPageInput" name="description" rows="10"></textarea>
+    <textarea id="description" class="newPageInput" name="description"></textarea>
     <button class="newPageBtn" type="submit">Create page</button>
 </form>
 {% endblock %}

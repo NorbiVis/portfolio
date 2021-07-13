@@ -6,3 +6,11 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = '__all__'
+        widgets = {
+            'title': forms.TextInput(attrs={
+                'class': 'editInput'
+            }),
+            'description': forms.Textarea(attrs={
+                'class': 'editInput'
+            })
+        }

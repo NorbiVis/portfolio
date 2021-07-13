@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import home_page, new_page, random_page, pages
+from .views import home_page, new_page, random, pages, search_pages, edit_post
 
 app_name = 'wiki'
 
@@ -7,5 +7,7 @@ urlpatterns = [
     path('', home_page, name="home_page"),
     path('new_page', new_page, name='new_page'),
     path('wiki/<str:title>', pages, name='pages'),
-    path('random_page', random_page, name='random_page'),
+    path('random_page', random, name='random_page'),
+    path('search', search_pages, name="search"),
+    path('wiki/<str:title>/edit', edit_post, name='edit_post')
 ]

@@ -3,9 +3,15 @@
 <title>Wikipedia</title>
 {% endblock %}
 
-
 {% block main %}
-{% for post in posts %}
-<a href="wiki/{{ post.title }}">{{ post.title }}</a>
-{% endfor %}
-{% endblock %}
+<div class="mainContainerIndex">
+    <h2 class="indexTitle">Help us to grow updateing with your knowladge</h2>
+    {% for post in posts %}
+    <a class="mainLinks" href="wiki/{{ post.title }}">{{ post.title }}</a>
+    {% endfor %}
+
+    {% for post in search %}
+    <a class="mainLinks" href="wiki/{{ post.title }}">{{ post.title }}</a><br>
+    {% endfor %}
+    {% endblock %}
+</div>
