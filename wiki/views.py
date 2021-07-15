@@ -45,8 +45,6 @@ def search_pages(request):
         return HttpResponseRedirect(reverse("wiki:pages", kwargs={'title': search_inp}))
     else:
         search = Post.objects.filter(title__icontains=search_inp)
-        print(search)
-
     return render(request, 'wiki/index.html', {
         "search": search
     })
@@ -74,4 +72,4 @@ def random(request):
     posts = Post.objects.all()
     random_post = secrets.choice(posts)
     title = random_post.title
-    return HttpResponseRedirect(reverse("wiki:pages", kwargs={'title': title}))
+    return HttpResponseRedirect(reverse('wiki:pages', kwargs={'title': title}))
