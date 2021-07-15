@@ -5,11 +5,27 @@ from .models import Product
 User = get_user_model()
 
 
-class RegistrationForm:
-    username = forms.CharField(max_length=30)
-    email = forms.EmailField(max_length=40)
-    password1 = forms.CharField(max_length=20, widget=forms.PasswordInput)
-    password2 = forms.CharField(max_length=20, widget=forms.PasswordInput)
+class RegisterForm(forms.Form):
+    username = forms.CharField(max_length=30, widget=forms.TextInput(attrs={
+        'class': 'registerInput',
+        'name': 'username',
+        'placeholder': " ",
+    }))
+    email = forms.EmailField(max_length=40, widget=forms.EmailInput(attrs={
+        'class': 'registerInput',
+        'name': 'email',
+        'placeholder': " "
+    }))
+    password_one = forms.CharField(max_length=20, widget=forms.PasswordInput(attrs={
+        'class': 'registerInput',
+        'name': 'password_one',
+        'placeholder': " ",
+    }))
+    password_two = forms.CharField(max_length=20, widget=forms.PasswordInput(attrs={
+        'class': 'registerInput',
+        'name': 'password_two',
+        'placeholder': " "
+    }))
 
     def clean_username(self):
         username = self.cleaned_data.get('username')
@@ -27,16 +43,24 @@ class RegistrationForm:
 
     def clean(self):
         cleaned_data = super().clean()
-        pass1 = self.cleaned_data.get("password1")
-        pass2 = self.cleaned_data.get("password2")
+        pass1 = self.cleaned_data.get("password_one")
+        pass2 = self.cleaned_data.get("password_two")
         if pass1 != pass2:
             raise forms.ValidationError("Password don't match")
         return cleaned_data
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField(max_length=20)
-    password = forms.CharField(max_length=20, widget=forms.PasswordInput)
+    username = forms.CharField(max_length=30, widget=forms.TextInput(attrs={
+        'class': 'registerInput',
+        'name': 'username',
+        'placeholder': " ",
+    }))
+    password_one = forms.CharField(max_length=20, widget=forms.PasswordInput(attrs={
+        'class': 'registerInput',
+        'name': 'password_one',
+        'placeholder': " ",
+    }))
 
 
 class AuctionForm(forms.ModelForm):

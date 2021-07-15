@@ -1,0 +1,33 @@
+{% extends 'auction/layout.html' %}
+{% block head %}
+<title>Register</title>
+{% endblock %}
+
+{% block main %}
+<div class="registerContainer">
+    <form class="formContainer" action="" method="POST">
+        {% csrf_token %}
+        <div class="formDiv">
+            {{ form.username }}
+            <label class="registerLabel" for="usename">Username</label>
+
+        </div>
+        <div class="formDiv">
+            {{ form.email }}
+            <label class="registerLabel" for="email">Email</label>
+
+        </div>
+        <div class="formDiv">
+            {{ form.password_one }}
+            <label class="registerLabel" for="password_one">Password</label>
+
+        </div>
+        <div class="formDiv">
+            {{ form.password_two }}
+            <label class="registerLabel" for="password_two">Confirm Password</label>
+
+        </div>
+        <button class="registerButton" type="submit">Register</button>
+    </form>
+</div>
+{% endblock %}
