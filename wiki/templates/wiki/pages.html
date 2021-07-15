@@ -1,9 +1,0 @@
-{% extends 'wiki/layout.html' %}
-
-{% block main %}
-<div class="mainContainerPages">
-    <h3>{{ posts.title }}</h3>
-    <p>{{ posts.description }}</p>
-    <a href="{% url 'wiki:edit_post' posts.title %}"><button class="editBtn">Update</button></a>
-</div>
-{% endblock %}
