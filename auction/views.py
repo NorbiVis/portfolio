@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import get_user_model, authenticate, login
+from django.contrib.auth import get_user_model, authenticate, login, logout
 from .forms import RegisterForm, LoginForm
 
 User = get_user_model()
@@ -30,3 +30,8 @@ def login_view(request):
     return render(request, 'auction/login.html', {
         'form': form
     })
+
+
+def logout_view(request):
+    logout(request)
+    return redirect("auction:index")
