@@ -12,7 +12,7 @@ def register_view(request):
         email = form.cleaned_data.get("email")
         password = form.cleaned_data.get("password1")
         user = User.objects.create_user(username, email, password)
-        return redirect("/")
+        return redirect("user:login_page")
     return render(request, 'user/register.html', {
         'form': form
     })
@@ -26,7 +26,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user != None:
             login(request, user)
-            return redirect("user:index")
+            return redirect("user:register")
     return render(request, 'user/login.html', {
         'form': form
     })
