@@ -1,0 +1,56 @@
+
+@charset "UTF-8";
+
+
+@font-face {
+	font-family: 'Rubik';
+	font-weight: 100 900;
+	font-display: swap;
+	font-style: normal;
+	font-named-instance: 'Regular';
+	src: url("./fonts/rubik_regular.woff2") format("woff2");
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { font-family: 'Rubik', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.5em; }
+
+
+body { display: block; min-height: 100vh; margin: 0; text-rendering: optimizeSpeed; 
+}
+
+img, picture { max-width: 100%; display: block; }
+
+input, button, textarea, select { font: inherit; }
+
+strong { font-weight: 900; }
+
+.container{background: rgb(248, 242, 242); height: 200vh; }
+    .header { height: 50px; display: flex; position: sticky; top: 0; background: white;}
+        .logo { display: block;}
+            .logoImg { width: 100px; height: 70px; position: relative; z-index: 1; border-radius: 50%;}
+            .logoImg:hover { height: 100px;}
+        .triggerBtn { display: block;  padding: 0.375px; margin: 0; background: transparent; border: none;}
+            .searchTrigger{ margin-right: auto; }
+            .menuTrigger { }
+            .watchlistTrigger {margin-left: auto; }
+            .triggerImg { display: block; width: 2rem; height: 2rem;  }
+                .searchTriggerImg { }
+                .menuTriggerImg { }
+                .watchlistTriggerImg { }
+        .searchForm {display: none; position: absolute; top: 2.75rem; opacity: 70%; z-index: 2;}
+        .searchForm.Active { display:block}
+            .fieldset { display: inline; border: none; padding: 0; margin: 0;}
+                .legend { display: none;}
+                .searchLabel { display: block;  }
+                    .searchLabelText { display: none; }
+                    .searchInput { display: inline-block;  border: none; width: 100vw; outline: none;}
+                    .searchBtn { display: block; position: fixed; top: 2.75rem; right: 0;}
+        .menu { display: none; position: absolute; top: 2.75rem;  background: lightblue;}
+        .menu.Active{ display: block; }
+            .menuList { display: block; padding-left:0.2rem; margin:0;} 
+                .menuLink { display: block; text-decoration: none;}
+                    .menuItem { display: block; }
+    .main { }
+    .footer { }
+

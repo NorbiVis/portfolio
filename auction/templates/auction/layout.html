@@ -10,11 +10,69 @@
     {% block head %}
     {% endblock %}
 </head>
-{% block main %}
-{% endblock %}
 
 <body>
+    <div class="container">
+        <header class="header">
+            <button id="MenuTrigger" class="triggerBtn menuTrigger">
+                <img class="triggerImg menuTriggerImg " src="{% static 'img/menu_icon.svg' %}" alt="Open menu"
+                    width="44px" height="44px">
+            </button>
+            <nav id="Menu" class="menu">
+                <ul class="menuList">
+                    <a class="menuLink" href="">
+                        <li class="menuItem">Listings</li>
+                    </a>
+                    <a class="menuLink" href="">
+                        <li class="menuItem">New Listing</li>
+                    </a>
+                    <a class="menuLink" href="">
+                        <li class="menuItem">Watchlist</li>
+                    </a>
+                    <a class="menuLink" href="">
+                        <li class="menuItem">Active Listings</li>
+                    </a>
 
+                </ul>
+            </nav>
+            <button id="SearchTrigger" class="triggerBtn searchTrigger">
+                <img class="triggerImg searchTriggerImg" src="{% static 'img/search_icon.svg' %}" alt="Search Auction"
+                    width="44px" height="44px">
+            </button>
+            <form id="SearchForm" class="searchForm" action="" method="GET">
+                <fieldset class="fieldset">
+                    <legend class="legend">Search on Acution Page</legend>
+                    <label class="searchLabel" for="">
+                        <span class="searchLabelText">Search Here</span>
+                        <input class="searchInput" type="search">
+                    </label>
+                </fieldset>
+                <button class="triggerBtn searchTrigger searchBtn">
+                    <img class="triggerImg searchTriggerImg" src="{% static 'img/search_icon.svg' %}"
+                        alt="Search Auction" width="44px" height="44px">
+                </button>
+            </form>
+            <a href="@TODO" title="Back to homepage" class="logo">
+                <img class="logoImg" src="{% static 'img/auction_icon.jpg' %}" alt="Auction Logo" width="90px"
+                    height="90px">
+            </a>
+            <button class="triggerBtn watchlistTrigger">
+                <img class="triggerImg watchlistTriggerImg" src="{% static 'img/watchlist2_icon.svg' %}"
+                    alt="Go to watchlist" width="44px" height="44px">
+            </button>
+            <button class="triggerBtn loginTrigger">
+                <img class="triggerImg loginTriggerImg " src="{% static 'img/login_icon.svg' %}" alt="Open menu"
+                    width="44px" height="44px">
+            </button>
+        </header>
+        <main class="main">
+
+        </main>
+        <footer class="footer">
+
+        </footer>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>
